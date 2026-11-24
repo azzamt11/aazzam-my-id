@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2ec">
+  <meta name="description" content="Abdullah Azzam is a Platform Engineer who builds useful apps and tools.">
+  <title>Abdullah Azzam — Platform Engineer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f2ec;
+      --ink: #1d211d;
+      --muted: #77796f;
+      --line: #d9d7cd;
+      --green: #315e46;
+      --lime: #d4ed76;
+      --white: #fffefa;
+      --serif: Georgia, "Times New Roman", serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .topbar { height: 76px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-size:14px; font-weight:750; letter-spacing:-.03em; }
+    .brand-mark { display:grid; place-items:center; width:29px; height:29px; background:var(--green); color:white; border-radius:50% 50% 50% 8px; font-family:var(--serif); font-size:17px; }
+    nav { display:flex; gap:28px; align-items:center; font-size:12px; color:var(--muted); }
+    nav a { text-decoration:none; } nav a:hover { color:var(--ink); }
+    .availability { display:flex; align-items:center; gap:8px; font-size:11px; color:var(--muted); }
+    .dot { width:7px; height:7px; border-radius:50%; background:#78a759; box-shadow:0 0 0 4px #78a75920; }
+    .hero { padding:88px 0 64px; display:grid; grid-template-columns:1.35fr .65fr; gap:50px; align-items:end; }
+    .eyebrow { display:flex; align-items:center; gap:9px; margin:0 0 21px; text-transform:uppercase; letter-spacing:.14em; font-size:10px; color:var(--green); font-weight:750; }
+    h1 { max-width:720px; margin:0; font-size:clamp(48px, 7vw, 88px); letter-spacing:-.075em; line-height:.98; font-weight:570; }
+    h1 em { font-family:var(--serif); font-weight:400; color:var(--green); }
+    .intro { max-width:320px; margin:0 0 5px; color:var(--muted); font-size:14px; line-height:1.8; }
+    .intro strong { color:var(--ink); font-weight:600; }
+    .catalog { border-top:1px solid var(--ink); }
+    .catalog-head { padding:19px 0; display:flex; align-items:center; justify-content:space-between; }
+    .catalog-title { margin:0; font-size:12px; font-weight:700; letter-spacing:.01em; }
+    .count { font-family:var(--serif); font-size:13px; color:var(--muted); }
+    .filters { display:flex; gap:7px; }
+    .filter { border:1px solid var(--line); background:transparent; color:var(--muted); padding:7px 12px; border-radius:999px; font:inherit; font-size:10px; cursor:pointer; transition:.2s; }
+    .filter:hover, .filter.active { background:var(--green); border-color:var(--green); color:white; }
+    .app-list { border-top:1px solid var(--line); }
+    .app { min-height:142px; display:grid; grid-template-columns:60px minmax(0,1fr) auto; gap:23px; align-items:center; padding:24px 0; border-bottom:1px solid var(--line); animation:appear .35s ease both; }
+    @keyframes appear { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+    .app[hidden] { display:none; }
+    .icon { width:58px; height:58px; border-radius:18px; display:grid; place-items:center; font-size:25px; }
+    .icon.moss { background:#dce8cf; color:#35543c; } .icon.peach { background:#f1d6c4; color:#874e32; } .icon.blue { background:#d8e2e9; color:#35566a; } .icon.lilac { background:#e4dced; color:#654f7a; }
+    .app-meta { min-width:0; }
+    .app-kicker { margin:0 0 5px; color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:9px; font-weight:700; }
+    .app h3 { margin:0 0 5px; font-size:19px; letter-spacing:-.045em; font-weight:650; }
+    .app-desc { margin:0; color:var(--muted); font-size:12px; line-height:1.6; }
+    .app-actions { display:flex; align-items:center; gap:18px; }
+    .platform { color:var(--muted); font-size:10px; white-space:nowrap; }
+    .download { display:inline-flex; align-items:center; gap:9px; padding:11px 14px; background:var(--green); color:white; text-decoration:none; border-radius:5px; font-size:11px; font-weight:650; white-space:nowrap; transition:background .2s, transform .2s; }
+    .download:hover { background:#234632; transform:translateY(-1px); }
+    .download svg { width:13px; height:13px; }
+    .empty { display:none; padding:45px 0; color:var(--muted); text-align:center; font-size:13px; }
+    .note { margin:50px 0 86px; background:var(--lime); padding:28px 32px; display:flex; justify-content:space-between; align-items:center; gap:24px; border-radius:4px; }
+    .note p { max-width:590px; margin:0; font-family:var(--serif); font-size:20px; line-height:1.45; }
+    .note small { font-family:var(--serif); font-size:12px; white-space:nowrap; }
+    footer { border-top:1px solid var(--line); padding:22px 0 34px; display:flex; justify-content:space-between; color:var(--muted); font-size:10px; }
+    footer a { text-decoration:none; } footer a:hover { color:var(--ink); }
+    @media (max-width:700px) {
+      .wrap { width:min(100% - 36px, 540px); }
+      .topbar { height:65px; } nav { gap:16px; } nav a:nth-child(2) { display:none; } .availability { display:none; }
+      .hero { padding:66px 0 43px; grid-template-columns:1fr; gap:22px; } h1 { font-size:clamp(51px, 14vw, 76px); } .intro { max-width:410px; }
+      .catalog-head { align-items:flex-start; gap:13px; flex-direction:column; } .app { grid-template-columns:48px minmax(0,1fr); gap:15px; padding:20px 0; } .icon { width:48px; height:48px; border-radius:15px; font-size:21px; }
+      .app-actions { grid-column:2; justify-content:space-between; margin-top:-4px; } .app h3 { font-size:17px; } .note { margin:38px 0 61px; padding:22px; align-items:flex-start; flex-direction:column; gap:12px; } .note p { font-size:18px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" aria-label="Abdullah Azzam home"><span class="brand-mark">a</span><span>ABDULLAH AZZAM</span></a>
+    <nav aria-label="Main navigation"><a href="#apps">Apps</a><a href="#about">About</a><a href="mailto:hello@aazzam.my.id">Contact ↗</a></nav>
+    <div class="availability"><span class="dot"></span> Platform Engineer</div>
+  </header>
+  <main id="top" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div><p class="eyebrow"><span class="dot"></span> Platform Engineer</p><h1 id="hero-title">Abdullah<br><em>Azzam.</em></h1></div>
+      <p class="intro">I’m <strong>Abdullah Azzam,</strong> a Platform Engineer who builds useful apps and tools. Browse the collection and download something useful.</p>
+    </section>
+    <section id="apps" class="catalog" aria-labelledby="catalog-title">
+      <div class="catalog-head"><div><h2 id="catalog-title" class="catalog-title">The app shelf <span class="count" id="app-count">(04)</span></h2></div>
+        <div class="filters" role="group" aria-label="Filter apps"><button class="filter active" data-filter="all" aria-pressed="true">All apps</button><button class="filter" data-filter="mobile" aria-pressed="false">Mobile</button><button class="filter" data-filter="desktop" aria-pressed="false">Desktop</button></div>
+      </div>
+      <div class="app-list" id="app-list">
+        <!-- Replace these sample apps and href values with your own app names and download URLs. -->
+        <article class="app" data-platform="mobile" style="animation-delay:0ms"><div class="icon moss" aria-hidden="true">✳</div><div class="app-meta"><p class="app-kicker">Productivity · Android & iOS</p><h3>Daymark</h3><p class="app-desc">A calmer way to plan your day and keep the important things in view.</p></div><div class="app-actions"><span class="platform">Mobile</span><a class="download" href="https://example.com/daymark" target="_blank" rel="noopener">Get the app <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" stroke="currentColor" stroke-width="1.5"/></svg></a></div></article>
+        <article class="app" data-platform="desktop" style="animation-delay:60ms"><div class="icon peach" aria-hidden="true">◒</div><div class="app-meta"><p class="app-kicker">Focus · macOS & Windows</p><h3>Quiet Hours</h3><p class="app-desc">A tiny focus timer that helps you make room for uninterrupted work.</p></div><div class="app-actions"><span class="platform">Desktop</span><a class="download" href="https://example.com/quiet-hours" target="_blank" rel="noopener">Download <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" stroke="currentColor" stroke-width="1.5"/></svg></a></div></article>
+        <article class="app" data-platform="mobile" style="animation-delay:120ms"><div class="icon blue" aria-hidden="true">⌁</div><div class="app-meta"><p class="app-kicker">Utilities · Android</p><h3>Little Ledger</h3><p class="app-desc">Track small expenses with a clean, private, no-fuss pocket ledger.</p></div><div class="app-actions"><span class="platform">Mobile</span><a class="download" href="https://example.com/little-ledger" target="_blank" rel="noopener">Get the app <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" stroke="currentColor" stroke-width="1.5"/></svg></a></div></article>
+        <article class="app" data-platform="desktop" style="animation-delay:180ms"><div class="icon lilac" aria-hidden="true">✣</div><div class="app-meta"><p class="app-kicker">Creative · Web</p><h3>Color Notes</h3><p class="app-desc">Collect colors, name palettes, and share a little inspiration with your team.</p></div><div class="app-actions"><span class="platform">Web</span><a class="download" href="https://example.com/color-notes" target="_blank" rel="noopener">Open app <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" stroke="currentColor" stroke-width="1.5"/></svg></a></div></article>
+      </div>
+      <p class="empty" id="empty-state">No apps in this category yet.</p>
+    </section>
+    <aside id="about" class="note"><p>“I believe the best tools are the ones that quietly make your day a little better.”</p><small>— Abdullah Azzam</small></aside>
+  </main>
+  <footer class="wrap"><span>© <span id="year"></span> Abdullah Azzam. Made with care.</span><a href="mailto:hello@aazzam.my.id">Say hello ↗</a></footer>
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const apps = [...document.querySelectorAll('.app')];
+    const count = document.getElementById('app-count');
+    const empty = document.getElementById('empty-state');
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function filterApps(category) {
+      let visible = 0;
+      apps.forEach(app => {
+        const show = category === 'all' || app.dataset.platform === category;
+        app.hidden = !show;
+        if (show) visible++;
+      });
+      count.textContent = `(${String(visible).padStart(2, '0')})`;
+      empty.style.display = visible ? 'none' : 'block';
+    }
+    filters.forEach(button => button.addEventListener('click', () => {
+      filters.forEach(item => { const active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); });
+      filterApps(button.dataset.filter);
+    }));
+  </script>
+</body>
+</html>
