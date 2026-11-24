@@ -1,0 +1,13 @@
+# Local environment settings and secrets
+.env
+.env.*
+!.env.example
+
+# SSH private keys
+*.pem
+id_rsa
+id_ed25519
+
+# App binaries stay on the server, not in the Git repository
+/downloads/*
+!/downloads/.gitkeep

@@ -2,4 +2,7 @@
 .agents
 .aws
 .codex
+.env
+.env.*
+downloads/
 README.md
